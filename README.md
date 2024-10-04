@@ -55,8 +55,8 @@ Follow these steps to get the backend running locally.
 ### 1\. Clone the repository
 
 
-`git clone https://github.com/your-repository/employment-system-backend.git
-cd employment-system-backend`
+`git clone https://github.com/abdelrhmanali29/EmploymentSystem.git
+cd EmploymentSystem`
 
 ### 2\. Set Up SQL Server
 
@@ -86,6 +86,7 @@ Before running the application, apply the database migrations to set up the sche
 ### 5\. Run the Application
 
 `dotnet run`
+
 *NOTE:you can run it with Visual Studio IDE*
 
 The application will start, and Swagger will be available at `https://localhost:7040/swagger` or `http://localhost:5290/swagger` depending on the launch settings.
@@ -99,7 +100,7 @@ How to Use
 
 ### 1\. Register as Employer or Applicant
 
--   **Endpoint**: `/api/auth/register`
+-   **Endpoint**: `/api/Auth/register`
 -   Send a `POST` request with the following payload:
 
 
@@ -113,7 +114,7 @@ How to Use
 
 ### 2\. Login
 
--   **Endpoint**: `/api/auth/login`
+-   **Endpoint**: `/api/Auth/login`
 -   Send a `POST` request with the following payload:
 
 
@@ -130,17 +131,17 @@ How to Use
 
 #### Employer Role
 
--   **Create a Vacancy**: `/api/employers/vacancies` (POST)
--   **Update a Vacancy**: `/api/employers/vacancies/{vacancyId}` (PUT)
--   **Delete a Vacancy**: `/api/employers/vacancies/{vacancyId}` (DELETE)
--   **Get All Vacancies**: `/api/employers/vacancies` (GET)
--   **View Applicants for Vacancy**: `/api/employers/vacancies/{vacancyId}/applicants` (GET)
+-   **Create a Vacancy**: `/api/Employers/vacancies` (POST)
+-   **Update a Vacancy**: `/api/Employers/vacancies/{vacancyId}` (PUT)
+-   **Delete a Vacancy**: `/api/Employers/vacancies/{vacancyId}` (DELETE)
+-   **Get All Vacancies**: `/api/Employers/vacancies` (GET)
+-   **View Applicants for Vacancy**: `/api/Employers/vacancies/{vacancyId}/applicants` (GET)
 
 #### Applicant Role
 
--   **Search for Vacancies**: `/api/applicants/vacancies?keyword={your_keyword}` (GET)
--   **Apply for Vacancy**: `/api/applicants/vacancies/{vacancyId}/apply` (POST)
--   **View Applied Vacancies**: `/api/applicants/applied-vacancies` (GET)
+-   **Search for Vacancies**: `/api/Applicants/vacancies?keyword={your_keyword}` (GET)
+-   **Apply for Vacancy**: `/api/Applicants/vacancies/{vacancyId}/apply` (POST)
+-   **View Applied Vacancies**: `/Api/applicants/applied-vacancies` (GET)
 
 Caching Strategy
 ----------------
