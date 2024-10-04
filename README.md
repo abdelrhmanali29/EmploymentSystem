@@ -144,8 +144,8 @@ How to Use
 Caching Strategy
 ----------------
 
--   Vacancy search results are cached for 10 minutes to improve performance.
--   Cache is invalidated when vacancies are created, updated, or deleted to ensure up-to-date search results.
+-   Vacancy search results are cached for 60 minutes to improve performance.
+-   Cache is invalidated when vacancies are updated or deleted to ensure up-to-date search results.
 
 Development
 -----------
