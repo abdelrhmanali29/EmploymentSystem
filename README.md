@@ -86,6 +86,7 @@ Before running the application, apply the database migrations to set up the sche
 ### 5\. Run the Application
 
 `dotnet run`
+*NOTE:you can run it with Visual Studio IDE*
 
 The application will start, and Swagger will be available at `https://localhost:7040/swagger` or `http://localhost:5290/swagger` depending on the launch settings.
 
