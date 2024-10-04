@@ -54,7 +54,7 @@ Follow these steps to get the backend running locally.
 
 ### 1\. Clone the repository
 
-bash
+
 `git clone https://github.com/your-repository/employment-system-backend.git
 cd employment-system-backend`
 
@@ -66,25 +66,25 @@ cd employment-system-backend`
 
 In the `appsettings.json` file, ensure that the following configurations are set:
 
-json
-`"ConnectionStrings": {
+
+<pre>
+"ConnectionStrings": {
   "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=employmentDB;User Id=your_username;Password=your_password;"
 },
 "Jwt": {
   "Key": "your_jwt_secret_key",  // Ensure this is at least 16 characters
   "Issuer": "yourissuer.com"
-}`
+}
+</pre>
 
 ### 4\. Apply Migrations
 
 Before running the application, apply the database migrations to set up the schema:
 
-bash
 `dotnet ef database update`
 
 ### 5\. Run the Application
 
-bash
 `dotnet run`
 
 The application will start, and Swagger will be available at `https://localhost:7040/swagger` or `http://localhost:5290/swagger` depending on the launch settings.
@@ -101,23 +101,27 @@ How to Use
 -   **Endpoint**: `/api/auth/register`
 -   Send a `POST` request with the following payload:
 
-json
-`{
+
+<pre>
+{
   "username": "yourusername",
   "password": "yourpassword",
   "role": "Employer"  // or "Applicant"
-}`
+}
+</pre>
 
 ### 2\. Login
 
 -   **Endpoint**: `/api/auth/login`
 -   Send a `POST` request with the following payload:
 
-json
-`json {
+
+<pre>
+{
   "username": "yourusername",
   "password": "yourpassword"
-}`
+}
+</pre>
 
 -   The response will contain a JWT token, which you will use to authenticate requests.
 
@@ -150,13 +154,3 @@ Development
 
 -   The project includes logging using `ILogger<T>`. Logs are written to the console by default.
 -   You can view logs in the terminal when running the application to track the flow, warnings, and errors.
-
-License
--------
-
-This project is licensed under the MIT License.
-
-Contributing
-------------
-
-Contributions are welcome! If you find any issues or want to add a feature, feel free to open a pull request.
