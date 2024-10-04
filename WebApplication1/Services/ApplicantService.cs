@@ -2,6 +2,7 @@
 using EmploymentSystem.Models;
 using EmploymentSystem.Repositories;
 using EmploymentSystem.RTOs;
+using EmploymentSystem.Utilities;
 using Microsoft.Extensions.Logging;
 
 namespace EmploymentSystem.Services
@@ -24,7 +25,23 @@ namespace EmploymentSystem.Services
         public async Task<List<Vacancy>> SearchVacancies(string keyword)
         {
             _logger.LogInformation("Searching vacancies with keyword: {Keyword}", keyword);
-            return await _vacancyRepository.SearchAsync(keyword);
+
+            var cacheKey = $"VacancySearch_{keyword}";
+            var cachedVacancies = CacheManager.Get<List<Vacancy>>(cacheKey);
+
+            if (cachedVacancies != null)
+            {
+                _logger.LogInformation("Vacancies retrieved from cache for keyword: {Keyword}", keyword);
+                return cachedVacancies;
+            }
+
+            var vacancies = await _vacancyRepository.SearchAsync(keyword);
+
+            CacheManager.Set(cacheKey, vacancies, TimeSpan.FromMinutes(60));
+
+            _logger.LogInformation("Vacancies cached for keyword: {Keyword}", keyword);
+
+            return vacancies;
         }
 
         public async Task ApplyForVacancy(int vacancyId, int applicantId)
