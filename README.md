@@ -55,9 +55,6 @@ Follow these steps to get the backend running locally.
 ### 1\. Clone the repository
 
 bash
-
-Copy code
-
 `git clone https://github.com/your-repository/employment-system-backend.git
 cd employment-system-backend`
 
@@ -70,9 +67,6 @@ cd employment-system-backend`
 In the `appsettings.json` file, ensure that the following configurations are set:
 
 json
-
-Copy code
-
 `"ConnectionStrings": {
   "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=employmentDB;User Id=your_username;Password=your_password;"
 },
@@ -86,17 +80,11 @@ Copy code
 Before running the application, apply the database migrations to set up the schema:
 
 bash
-
-Copy code
-
 `dotnet ef database update`
 
 ### 5\. Run the Application
 
 bash
-
-Copy code
-
 `dotnet run`
 
 The application will start, and Swagger will be available at `https://localhost:7040/swagger` or `http://localhost:5290/swagger` depending on the launch settings.
@@ -114,9 +102,6 @@ How to Use
 -   Send a `POST` request with the following payload:
 
 json
-
-Copy code
-
 `{
   "username": "yourusername",
   "password": "yourpassword",
@@ -129,10 +114,7 @@ Copy code
 -   Send a `POST` request with the following payload:
 
 json
-
-Copy code
-
-`{
+`json {
   "username": "yourusername",
   "password": "yourpassword"
 }`
